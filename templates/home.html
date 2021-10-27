@@ -4,4 +4,9 @@
 
 {% block content %}
     <h1>Hey there!</h1>
+    {% for book in books %}
+        {{ book }}
+    {% endfor %}
+    <p>We have currently {{ books.count }} books</p>
+    
 {% endblock content %}
