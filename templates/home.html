@@ -8,5 +8,9 @@
         {{ book }}
     {% endfor %}
     <p>We have currently {{ books.count }} books</p>
+    {% if books.last != Null %}
+        <p>Our newest book is {{ books.last }}</p>
+    {% endif %}
+
     
 {% endblock content %}
