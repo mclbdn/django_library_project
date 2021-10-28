@@ -10,18 +10,38 @@
     <title>Django Library | {% block title %}{% endblock title %}</title>
 </head>
 <body>
+    <!-- Main Container -->
     <div class="ui raised very padded text container segment">
+        <!-- Header -->
         <h2 class="ui center aligned icon header blue">
             <i class="circular book icon"></i>
             Django Library
             <div class="sub header">The Home of the Best Books in the World</div>
         </h2>
+        <!-- End Header -->
+
+        <!-- Divider -->
         <div class="ui divider"></div>
-        {% block content %}
-        {% endblock content %}
+        <!-- End Divider -->
+
+        <!-- Menu -->
+        <div class="ui three item menu">
+            <a href="{% url 'home' %}" class="item {% block menu_home_class %}{% endblock menu_home_class %}">Home</a>
+            <a href="{% url 'all-books' %}" class="item {% block menu_book_list_class %}{% endblock menu_book_list_class %}">All Books</a>
+            <a href="{% url 'add-book' %}" class="item {% block menu_add_book_class %}{% endblock menu_add_book_class %}">Add a Book</a>
+        </div>
+        <!-- End Menu -->
+
+        <!-- Content -->
+        {% block content %}{% endblock content %}
+        <!-- End Content -->
+
+        <!-- Footer -->
         <footer>
             FAQ
         </footer>
+        <!-- End Footer -->
     </div>
+    <!-- End Main Container -->
 </body>
 </html>

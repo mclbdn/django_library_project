@@ -2,6 +2,8 @@
 
 {% block title %}Home{% endblock title %}
 
+{% block menu_home_class %}active{% endblock menu_home_class %}
+
 {% block content %}
     {% if books.count == 1 %}
         <p>We currently have {{ books.count }} book in our library.</p>
