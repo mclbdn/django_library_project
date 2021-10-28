@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 from .models import Book
 
@@ -11,3 +11,9 @@ class HomeView(TemplateView):
         context['books'] = Book.objects.all()
         return context
 
+class BookListView(ListView):
+    template_name = 'book_list.html'
+
+    model = Book
+
+    context_object_name = 'books'

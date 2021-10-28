@@ -4,13 +4,13 @@
 
 {% block content %}
     <h1>Hey there!</h1>
-    {% for book in books %}
-        {{ book }}
-    {% endfor %}
+    
     {% if books.count == 1 %}
-        <p>We currently have {{ books.count }} book</p>
+        <p>We currently have {{ books.count }} book in our library.</p>
+        <p>If you wish to see it, click <a href="{% url 'all-books' %}">here</a></p>
     {% elif books.count > 1 %}
-        <p>We currently have {{ books.count }} books</p>
+        <p>We currently have {{ books.count }} books in our library</p>
+        <p>If you wish to browse through them, click <a href="{% url 'all-books' %}">here</a>.</p>
     {% else %}
         <p>We currently don't have any books....</p>
     {% endif %}
