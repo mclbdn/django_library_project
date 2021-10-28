@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'library',
+    # 3rd party
+    'django_tables2',
 ]
 
 MIDDLEWARE = [

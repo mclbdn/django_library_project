@@ -1,10 +1,10 @@
-from django.views.generic import TemplateView, ListView, CreateView
-
+from django.views.generic import TemplateView, CreateView
 from library.forms import BookForm
-
-from .models import Book
-
 from .forms import BookForm
+from .models import Book
+from .tables import BookTable
+from django_tables2 import SingleTableView
+
 
 # Create your views here.
 class HomeView(TemplateView):
@@ -15,12 +15,10 @@ class HomeView(TemplateView):
         context['books'] = Book.objects.all()
         return context
 
-class BookListView(ListView):
-    template_name = 'book_list.html'
-
+class BookListView(SingleTableView):
     model = Book
-
-    context_object_name = 'books'
+    table_class = BookTable
+    template_name = 'book_list.html'
 
 class AddBookView(CreateView):
     template_name = "add_book.html"
