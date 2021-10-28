@@ -1,6 +1,10 @@
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, CreateView
+
+from library.forms import BookForm
 
 from .models import Book
+
+from .forms import BookForm
 
 # Create your views here.
 class HomeView(TemplateView):
@@ -17,3 +21,8 @@ class BookListView(ListView):
     model = Book
 
     context_object_name = 'books'
+
+class AddBookView(CreateView):
+    template_name = "add_book.html"
+
+    form_class = BookForm
