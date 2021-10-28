@@ -5,7 +5,7 @@
 {% block menu_add_book_class %}active{% endblock menu_add_book_class %}
 
 {% block content %}
-    Form here
+    <h1 class="ui header">Add a Book</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}

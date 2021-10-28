@@ -5,6 +5,7 @@
 {% block menu_home_class %}active{% endblock menu_home_class %}
 
 {% block content %}
+    <h1 class="ui header">Home</h1>
     {% if books.count == 1 %}
         <p>We currently have {{ books.count }} book in our library.</p>
         <p>If you wish to see it, click <a href="{% url 'all-books' %}">here</a></p>
