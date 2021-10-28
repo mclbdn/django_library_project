@@ -7,10 +7,12 @@
     {% for book in books %}
         {{ book }}
     {% endfor %}
-    <p>We have currently {{ books.count }} books</p>
-    {% if books.last != Null %}
-        <p>Our newest book is {{ books.last }}</p>
+    {% if books.count == 1 %}
+        <p>We currently have {{ books.count }} book</p>
+    {% elif books.count > 1 %}
+        <p>We currently have {{ books.count }} books</p>
+    {% else %}
+        <p>We currently don't have any books....</p>
     {% endif %}
 
-    
 {% endblock content %}

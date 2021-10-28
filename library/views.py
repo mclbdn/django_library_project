@@ -10,3 +10,4 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['books'] = Book.objects.all()
         return context
+
