@@ -7,14 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Django Library Project | {% block title %}{% endblock title %}</title>
+    <title>Django Library | {% block title %}{% endblock title %}</title>
 </head>
 <body>
     <div class="ui raised very padded text container segment">
-        <h1 class="ui header">Django Library Project</h2>
+        <h2 class="ui center aligned icon header blue">
+            <i class="circular book icon"></i>
+            Django Library
+            <div class="sub header">The Home of the Best Books in the World</div>
+        </h2>
         <div class="ui divider"></div>
         {% block content %}
         {% endblock content %}
+        <footer>
+            FAQ
+        </footer>
     </div>
 </body>
 </html>
