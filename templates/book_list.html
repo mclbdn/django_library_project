@@ -7,7 +7,7 @@
     <h2>Book list</h2>
     {% for book in books %}
         <div>
-            {{ book.title }}, written in {{ book.year }}. Page count is {{ book.page_count }}
+            {{ book.title }}, written in {{ book.year }}. Page count is {{ book.page_count }}. Written by {{ book.author }}
         </div>
     {% endfor %}
 {% endblock content %}

@@ -6,6 +6,7 @@ class Book(models.Model):
     year = models.IntegerField()
     added = models.DateTimeField(auto_now=True)
     page_count = models.IntegerField()
+    author = models.CharField(max_length=150)
 
     def __str__(self):
         return self.title
