@@ -14,4 +14,9 @@ footer {
 
 .ui.breadcrumb {
     margin-bottom: 14px !important;
+    
+}
+
+.ui.grid {
+    margin-top: 1rem ;
 }
