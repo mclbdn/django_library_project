@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Search For a Book{% endblock title %}
+
+{% block menu_search_book_class %}active{% endblock menu_search_book_class %}
+
+{% block content %}
+    <ul>
+    {% for book in object_list %}
+        <li>
+        {{ book.title }} {{ book.author }}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Search For a Book{% endblock title %}
+
+{% block menu_search_book_class %}active{% endblock menu_search_book_class %}
+
+{% block content %}
+    <h1 class="ui header">Search For a Book</h1>
+
+    <form action="{% url 'results' %}" method="get">
+        <div class="ui icon input">
+            <input type="text" name="q" placeholder="Enter book's or author's name">
+            <i class="search icon"></i>
+        </div>
+        <br>
+        <button class="search-btn ui primary button" type="submit">Submit</button>
+    </form>
+    <ul>
+    {% for book in object_list %}
+        <li>
+        {{ book.title }} {{ book.author }}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

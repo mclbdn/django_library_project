@@ -25,10 +25,11 @@
         <!-- End Divider -->
 
         <!-- Menu -->
-        <div class="ui three item menu">
+        <div class="ui four item menu">
             <a href="{% url 'home' %}" class="item {% block menu_home_class %}{% endblock menu_home_class %}">Home</a>
             <a href="{% url 'all-books' %}" class="item {% block menu_book_list_class %}{% endblock menu_book_list_class %}">All Books</a>
             <a href="{% url 'add-book' %}" class="item {% block menu_add_book_class %}{% endblock menu_add_book_class %}">Add a Book</a>
+            <a href="{% url 'search-book' %}" class="item {% block menu_search_book_class %}{% endblock menu_search_book_class %}">Search & Delete</a>
         </div>
         <!-- End Menu -->
 

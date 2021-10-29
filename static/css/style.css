@@ -3,3 +3,11 @@ footer {
     margin-top: 2em;
 
 }
+
+.search-btn {
+    margin-top: 14px !important;
+}
+
+.ui.icon.input {
+    width: 45%;
+}

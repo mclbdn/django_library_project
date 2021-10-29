@@ -1,9 +1,13 @@
+from typing import List
+import django
 from django.views.generic import TemplateView, CreateView
+from django.views.generic.list import ListView
 from library.forms import BookForm
 from .forms import BookForm
 from .models import Book
 from .tables import BookTable
 from django_tables2 import SingleTableView
+from django.db.models import Q
 
 
 # Create your views here.
@@ -24,3 +28,18 @@ class AddBookView(CreateView):
     template_name = "add_book.html"
 
     form_class = BookForm
+
+class SearchBookView(TemplateView):
+    template_name = "search_book.html"
+
+
+class ResultsView(ListView):
+    model = Book
+    template_name = 'results.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Book.objects.filter(
+            Q(title__icontains=query) | Q(author__icontains=query)
+        )
+        return object_list
