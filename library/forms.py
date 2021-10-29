@@ -4,7 +4,7 @@ from .models import Book
 class BookForm(ModelForm):
     class Meta:
         model = Book
-        fields = ['title', 'year', 'page_count', 'author']
+        fields = ['title', 'author', 'year', 'page_count']
 
     def __init__(self, *args, **kwargs):
         super(BookForm, self).__init__(*args, **kwargs)
