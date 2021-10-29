@@ -5,11 +5,62 @@
 {% block menu_search_book_class %}active{% endblock menu_search_book_class %}
 
 {% block content %}
-    <ul>
-    {% for book in object_list %}
-        <li>
-        {{ book.title }} {{ book.author }}
-        </li>
-    {% endfor %}
-    </ul>
+
+    <h1 class="ui header">Search & Delete a Book</h1>
+
+    <div class="ui breadcrumb">
+        <a href="{% url 'search-book' %}" class="section">Search</a>
+        <span class="divider">/</span>
+        <div class="section active">Delete</div>
+    </div>
+    {% if object_list %}
+        <table class="ui very basic collapsing celled table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                    <th>Delete?</th>
+                </tr>
+            </thead>
+        <tbody>
+            {% for book in object_list %}
+            <tr>
+                <td>
+                    <h4 class="ui image header">
+                    <i class="book blue icon circular"></i>
+                    <div class="content">
+                        {{ book.title }}
+                        <div class="sub header">{{ book.page_count }} pages</div>
+                    </div>
+                </h4></td>
+                <td>
+                    {{ book.author }}
+                </td>
+                <td>
+                    {{ book.year }}
+                </td>
+                <td>
+                    <!-- <button class="ui red basic button"><a href="{% url 'delete-book' book.pk %}">Delete</a></button> -->
+                    <form method="post" action="{% url 'delete-book' book.pk %}">
+                        {% csrf_token %}
+                        <button type="submit" class="ui red button">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    {% else %}
+        <div class="ui placeholder segment">
+            <div class="ui icon header">
+                <i class="search icon"></i>
+                We don't have any book matching your query
+            </div>
+            <div class="inline">
+                <a href="{% url 'search-book' %}"><div class="ui primary button">Search again</div></a>
+            </div>
+        </div>
+    {% endif %}
+    
 {% endblock content %}

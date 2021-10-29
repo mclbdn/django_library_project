@@ -11,3 +11,7 @@ footer {
 .ui.icon.input {
     width: 45%;
 }
+
+.ui.breadcrumb {
+    margin-bottom: 14px !important;
+}

@@ -1,6 +1,4 @@
-from typing import List
-import django
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, DeleteView
 from django.views.generic.list import ListView
 from library.forms import BookForm
 from .forms import BookForm
@@ -8,6 +6,7 @@ from .models import Book
 from .tables import BookTable
 from django_tables2 import SingleTableView
 from django.db.models import Q
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -43,3 +42,7 @@ class ResultsView(ListView):
             Q(title__icontains=query) | Q(author__icontains=query)
         )
         return object_list
+
+class DeleteBookView(DeleteView):
+    model = Book
+    success_url = reverse_lazy('all-books')

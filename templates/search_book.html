@@ -5,7 +5,13 @@
 {% block menu_search_book_class %}active{% endblock menu_search_book_class %}
 
 {% block content %}
-    <h1 class="ui header">Search For a Book</h1>
+    <h1 class="ui header">Search & Delete a Book</h1>
+
+    <div class="ui breadcrumb">
+        <a href="{% url 'search-book' %}" class="active section">Search</a>
+        <span class="divider">/</span>
+        <div class="section">Delete</div>
+    </div>
 
     <form action="{% url 'results' %}" method="get">
         <div class="ui icon input">
@@ -15,11 +21,5 @@
         <br>
         <button class="search-btn ui primary button" type="submit">Submit</button>
     </form>
-    <ul>
-    {% for book in object_list %}
-        <li>
-        {{ book.title }} {{ book.author }}
-        </li>
-    {% endfor %}
-    </ul>
+
 {% endblock content %}
