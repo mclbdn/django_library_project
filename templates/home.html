@@ -12,6 +12,7 @@
     {% elif books.count > 1 %}
         <p>We currently have {{ books.count }} books in our library</p>
         <p>If you wish to browse through them, click <a href="{% url 'all-books' %}">here</a>.</p>
+        <p>You can also access REST API at /api/v1 and /api/v1/&lt;int:pk&gt;/</p>
     {% else %}
         <p>We currently don't have any books....</p>
     {% endif %}
