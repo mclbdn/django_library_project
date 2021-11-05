@@ -20,6 +20,8 @@ git clone https://github.com/mclbdn/django_library_project
 pip install -r requirements.txt
 ```
 * Set your own environment variables.
+* Run `python3 mmanage.py makemigrations`.
+* Run `python3 mmanage.py migrate`.
 * Run `python3 mmanage.py runserver`.
 
 ## Screenshots
